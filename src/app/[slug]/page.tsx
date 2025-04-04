@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug;
 
-  console.log(slug);
-
   let initialState = "";
 
   switch (slug) {
@@ -39,5 +37,3 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
     </main>
   );
 }
-
-
