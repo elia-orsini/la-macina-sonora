@@ -25,7 +25,7 @@ const SpinningLogo: React.FC = () => {
         ref={ref}
         object={gltf.scene}
         rotation={[-Math.PI / 2, Math.PI, Math.PI]}
-        position={windowWidth && windowWidth < 641 ? [0, 0, 2] : [0, 0, 3]}
+        position={windowWidth && windowWidth < 641 ? [0, 0.4, 2] : [0, 0, 3]}
       />
     </>
   );
