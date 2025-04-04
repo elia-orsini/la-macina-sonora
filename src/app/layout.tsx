@@ -4,9 +4,20 @@ import type { Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "La Macina Sonora",
-  description: "",
+  description:
+    "La Macina Sonora: studio di registrazione, produzione, servizi di Mixing e Mastering, service audio e network artistico per realizzare musica, contenuti multimediali ed eventi.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "/macina-logo.png",
+        width: 2600,
+        height: 2600,
+        alt: "La Macina Sonora",
+      },
+    ],
   },
 };
 

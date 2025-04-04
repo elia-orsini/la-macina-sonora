@@ -7,9 +7,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 
-export default function Landing() {
-  const [show, setShow] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+export default function Landing({ initialState }: { initialState?: string }) {
+  const [show, setShow] = useState(initialState ? true : false);
+  const [activeSection, setActiveSection] = useState<string | null>(initialState || null);
 
   const toggleSection = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -56,8 +56,13 @@ export default function Landing() {
           <br />
           <br />
           <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <span className="mb-60 mt-20 text-[0.7rem] italic leading-tight">
             Copyright © 2025 La Macina Sonora. All rights reserved.
+            <br />
             <br />
             Designed by Elia Orsini and Rino Bellandi.
           </span>
@@ -70,10 +75,11 @@ export default function Landing() {
         <>
           Il team audio della &quot;La Macina Sonora&quot; è composto da diversi producer e
           musicisti.
+          <br />
           <br /> Le produzioni dello studio si sono da sempre contraddistinte per un suono moderno,
           dettagliato e sempre in grado di soddisfare i gusti degli artisti. In particolare, grazie
           ai progetti musicali di Rino Bellandi, il suono della Macina si è specializzato sopratutto
-          nelle produzioni elettroniche e Hip-Hop. <br />
+          nelle produzioni elettroniche e Hip-Hop.
         </>
       ),
       images: [{ src: "/imgs/14.jpeg", alt: "Andrea Butturini - Polaroid" }],
@@ -84,15 +90,19 @@ export default function Landing() {
         <>
           &quot;La Macina Sonora&quot; nasce dall&apos;idea di Rino Bellandi di realizzare uno
           studio di registrazione e produzione musicale in grado di unire l&apos;arte della
-          registrazione tradizionale con le moderne tecniche di produzione audio. Lo studio è
-          situato a Montichiari, in provincia di Brescia ed è stato inaugurato nel gennaio 2020. Nel
-          corso degli anni i progetti della Macina Sonora sono diventati un riferimento sia per la
-          qualità delle registrazioni che per la varietà creativa delle produzioni realizzate
-          all&apos;interno dello studio da producer e musicisti. Oltre ad essere un luogo dove la
-          musica trova il modo di esprimersi la Macina è da sempre un aggregatore di talenti e
-          content creator, infatti il network che gravita intorno a questa realtà è arricchito da
-          grafici, fotografi, videomaker e creativi i quali lavorano costantemente per gli artisti
-          che scelgono lo studio come casa della propria arte.
+          registrazione tradizionale con le moderne tecniche di produzione audio.
+          <br />
+          <br />
+          Lo studio è situato a Montichiari, in provincia di Brescia ed è stato inaugurato nel
+          gennaio 2020. Nel corso degli anni i progetti della Macina Sonora sono diventati un
+          riferimento sia per la qualità delle registrazioni che per la varietà creativa delle
+          produzioni realizzate all&apos;interno dello studio da producer e musicisti.
+          <br />
+          <br />
+          Oltre ad essere un luogo dove la musica trova il modo di esprimersi la Macina è da sempre
+          un aggregatore di talenti e content creator, infatti il network che gravita intorno a
+          questa realtà è arricchito da grafici, fotografi, videomaker e creativi i quali lavorano
+          costantemente per gli artisti che scelgono lo studio come casa della propria arte.
         </>
       ),
       images: [
@@ -207,9 +217,11 @@ export default function Landing() {
           La Macina Eventi è la divisione Live dello studio di registrazione e produzione La Macina
           Sonora.
           <br />
+          <br />
           L&apos;agenzia nasce dall&apos;idea di raccogliere diverse figure professionali del
           settore dell&apos;intrattenimento in grado di curare a 360° l&apos;organizzazione di un
           evento pubblico e/o privato.
+          <br />
           <br />
           Grazie all&apos;esperienza maturata negli anni in diversi contesti il nostro team ha
           sviluppato una visione chiara degli aspetti artistici, tecnici e organizzativi necessari
@@ -225,9 +237,11 @@ export default function Landing() {
           La Macina Sonora Soundsystem nasce dall&apos;idea di portare il suono del nostro studio
           anche nel mondo Live affiancando gli artisti e i professionisti che hanno scelto di
           affidarsi al nostro team per la propria musica.
+          <br />
           <br /> Abbiamo costituito il nostro impianto prevalentemente di speaker RCF per concerti
           Live di band e musicisti mentre abbiamo diversi impianti FBT e Proel per DJ Set ed eventi
           elettronici.
+          <br />
           <br /> Il nostro parco microfoni per le esibizioni dal vivo è ampio e può soddisfare le
           esigenze sia di piccole formazioni che di concerti per migliaia di persone. <br />
           Per qualsiasi informazione sui nostri servizi o per chiedere un preventivo personalizzato
@@ -296,7 +310,7 @@ export default function Landing() {
                 <p className="text-sm md:text-base">{sectionContent[activeSection].text}</p>
 
                 <button
-                  className="border-1 fixed bottom-16 rounded-xl border border-white bg-black px-2 py-1 text-lg font-semibold text-white transition-colors duration-500 hover:border-black hover:bg-white hover:text-black"
+                  className="border-1 fixed bottom-16 rounded-xl border border-white bg-black px-2 py-1 text-base font-semibold text-white transition-colors duration-500 hover:border-black hover:bg-white hover:text-black md:text-xl"
                   onClick={() => setActiveSection(null)}
                 >
                   go back
