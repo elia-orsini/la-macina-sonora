@@ -58,8 +58,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description =
         "La Macina Sonora nasce dall'idea di Rino Bellandi di realizzare uno studio di registrazione e produzione musicale in grado di unire l'arte della registrazione tradizionale con le moderne tecniche di produzione audio.";
       break;
-    case "Recordings | La Macina Sonora":
-      title = "recordings";
+    case "recordings":
+      title = "Recordings | La Macina Sonora";
       description =
         "La Macina Sonora è divisa in due stanze, ideate e realizzate con due diversi approcci. Entrambe sono state progettate e trattate acusticamente da Riccardo Buccelleni, ingegnere specializzato nell'acustica degli ambienti che ha curato nei minimi dettagli il suono e l'estetica delle due stanze per poter realizzare al meglio ogni idea artistica.";
       break;
