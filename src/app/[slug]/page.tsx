@@ -38,6 +38,14 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   );
 }
 
+export async function generateStaticParams() {
+  const pages = ["the-studio", "recordings", "productions", "soundsystem", "events", "contacts"];
+
+  return pages.map((slug) => ({
+    slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug;
 
